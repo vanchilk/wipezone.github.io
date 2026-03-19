@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Download</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #1a1a1a;
+    overflow: hidden;
+}
+
+/* Top slideshow (half screen) */
+.slideshow {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 15s infinite;
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Dark bottom */
+.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    background: #1a1a1a;
+}
+
+/* Button */
+.download-btn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.download-btn img {
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.download-btn img:hover {
+    transform: scale(1.05);
+}
+</style>
+
+</head>
+<body>
+
+<!-- Slideshow -->
+<div class="slideshow">
+    <img class="slide" src="bg1.jpg">
+    <img class="slide" src="bg2.jpg">
+    <img class="slide" src="bg3.jpg">
+</div>
+
+<!-- Dark bottom -->
+<div class="bottom"></div>
+
+<!-- Download button -->
+<a href="launcher.exe" download class="download-btn">
+    <img src="button.png" alt="Download">
+</a>
+
+</body>
+</html>
